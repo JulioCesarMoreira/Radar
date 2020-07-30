@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="619.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
+   <children>
+      <VBox layoutX="74.0" layoutY="27.0" prefHeight="562.0" prefWidth="638.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="638.0">
+               <children>
+                  <Label text="Tamanho de percurso:" />
+                  <TextField fx:id="txtFldDistancia" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="61.0" text="100" />
+                  <Label text="metros">
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Limite de velocidade:">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtFldLimiteV" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="63.0" text="11" />
+                  <Label text="Mts/seg">
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="319.0" prefWidth="638.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="283.0" prefWidth="166.0">
+                     <children>
+                        <Label text="Veículos disponíveis">
+                           <VBox.margin>
+                              <Insets top="26.0" />
+                           </VBox.margin></Label>
+                        <ComboBox fx:id="cbDisponivel" prefWidth="150.0" />
+                        <Button mnemonicParsing="false" onMouseClicked="#btnDisponivelClick" text="Adc. Veiculo" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="283.0" prefWidth="236.0">
+                     <children>
+                        <Label text="Veículos em trânsito">
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="tbVwEntrada" onMouseClicked="#tblVwSaidaClick" prefHeight="242.0" prefWidth="171.0">
+                          <columns>
+                            <TableColumn prefWidth="91.0" text="Placa">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="placa" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="114.0" style="-fx-alignment: CENTER_RIGHT;" text="Hora da entrada">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="horaEntrada" />
+                                </cellValueFactory>
+                            </TableColumn>
+                          </columns>
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="283.0" prefWidth="422.0">
+                     <children>
+                        <Label text="Veículos multados" />
+                        <TableView fx:id="tbVwMulta" prefHeight="239.0" prefWidth="382.0">
+                           <columns>
+                              <TableColumn prefWidth="101.0" text="Placa">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="placa" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="85.0" style="-fx-alignment: CENTER_RIGHT;" text="Hora Entrada">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="horaEntrada" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="76.0" style="-fx-alignment: CENTER_RIGHT;" text="Hora Saída">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="horaSaida" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="60.0" style="-fx-alignment: CENTER_RIGHT;" text="mts">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="distanciaF" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="61.0" style="-fx-alignment: CENTER_RIGHT;" text="VM">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="velocidadeF" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                           </columns>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets left="35.0" right="5.0" />
+                     </padding></VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="279.0" prefWidth="1038.0">
+               <children>
+                  <VBox prefHeight="266.0" prefWidth="264.0">
+                     <children>
+                        <Label text="Último veículo verificado:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" top="3.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Veículo mais rápido:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Veículo mais lento:">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="Tempo médio para cruzar a linha:">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onMouseClicked="#zerarTudoClick" text="Reset">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" top="115.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children></VBox>
+                  <VBox prefHeight="266.0" prefWidth="616.0">
+                     <children>
+                        <Label fx:id="lbUltVerifc">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" top="3.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbMaisRapido">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbMaisLento">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTempMedio">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
