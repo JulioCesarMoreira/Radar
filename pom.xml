@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20171018</version>
+            <version>20230227</version>
             <type>jar</type>
         </dependency>
         
@@ -112,7 +112,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20180813</version>
+            <version>20230227</version>
             <type>jar</type>
         </dependency>
         <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
